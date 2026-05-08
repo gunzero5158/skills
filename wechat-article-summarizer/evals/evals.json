@@ -1,0 +1,12 @@
+{
+  "skill_name": "wechat-article-summarizer",
+  "evals": [
+    {
+      "id": 1,
+      "eval_name": "standard-financial-article",
+      "prompt": "帮我提取和总结这篇文章的核心观点：https://mp.weixin.qq.com/s/3xJaJYHkx4vhoTqbkls4Hg",
+      "expected_output": "Agent successfully fetches the article content, bypasses the anti-bot check, and returns a cohesive summary of the financial predictions.",
+      "files": []
+    }
+  ]
+}
