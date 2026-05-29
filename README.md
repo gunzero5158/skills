@@ -1,3 +1,5 @@
+[**中文**](README.md) | [**English**](README_en.md) | [**日本語**](README_ja.md)
+
 # My Antigravity Skills Collection 🚀
 这里是我个人制作并维护的 [Antigravity](https://github.com/GoogleDeepMind/antigravity) (或 Claude Code 等 Agent 终端) 专属本地技能（Skills）汇总合集。
 通过编写这些自定义技能，我可以让 AI 助手掌握更多垂直领域的专属能力，突破常规交互的限制，实现更深度的自动化工作流。
