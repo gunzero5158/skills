@@ -5,9 +5,9 @@ Here is a collection of custom local skills created and maintained by me for [An
 By writing these custom skills, I can empower the AI assistant with exclusive capabilities in specific domains, breaking through the limits of standard interactions and achieving deeper automated workflows.
 
 ## 🛠️ List of Included Skills
-### 1. WeChat Official Account Article Grabber (wechat-article-summarizer)
+### 1. WeChat Public Account Article Grabber (wechat-article-summarizer)
 **Introduction**:
-A tool specifically developed to bypass the strong anti-scraping and CAPTCHA mechanisms of WeChat official accounts. When asking the AI to summarize WeChat articles, default browser nodes or normal HTTP requests often trigger CAPTCHA, leading to failure.
+A tool specifically developed to bypass the strong anti-scraping and CAPTCHA mechanisms of WeChat public accounts. When asking the AI to summarize WeChat articles, default browser nodes or normal HTTP requests often trigger CAPTCHA, leading to failure.
 **Core Features**:
 - **Seamless CAPTCHA Bypass**: Uses a Python script to spoof standard browser request headers and fetch the HTML source code headlessly, perfectly bypassing CAPTCHA pop-ups.
 - **Accurate Extraction**: Highly accurate extraction based on regex to strip away excess CSS, JS, and HTML tags, keeping only the core article title, author, and text.
