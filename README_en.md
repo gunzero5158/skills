@@ -25,5 +25,17 @@ A local skill dedicated to converting complex web pages (containing ads, sidebar
 **Usage Scenario**:
 "Help me save this webpage cleanly as a PDF: https://www..."
 
+### 3. Multilingual Official Social Post Assistant (official-social-posts)
+**Introduction**:
+A multilingual social-writing skill for daily official-account content. It defaults to Twitter/X but can also support other official social channels. It first reviews the conversation, project materials, and existing account style; if the workflow has already been established, it reuses the last confirmed languages, length constraints, tone, output format, and image preferences.
+**Core Features**:
+- **Context-first workflow**: Reviews prior context, project files, and brand assets before asking setup questions; reuses prior defaults for repeated workflows.
+- **Complete multilingual packages**: Produces post copy, hashtags, and image guidance or assets for each requested language.
+- **Topic and trend support**: Drafts from user-specified topics or proposes several timely topic options for the user to choose from.
+- **Official-account tone control**: Keeps posts natural, restrained, useful, and not overly promotional.
+- **Visual workflow**: Uses existing logos, posters, and brand assets first; for text-heavy social cards, prefers controllable HTML/CSS rendering to avoid multilingual text errors.
+**Usage Scenario**:
+"Based on current AI trends, write a Japanese and English official X post with hashtags and a promotional image."
+
 ---
 *To be continued... Welcome to Star ⭐️ and Fork!*

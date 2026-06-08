@@ -1,0 +1,5 @@
+interface:
+  display_name: "Official Social Posts"
+  short_description: "Draft multilingual official social posts"
+  brand_color: "#155199"
+  default_prompt: "Use $official-social-posts to draft multilingual official-account posts, hashtags, and matching visuals for this brand."
