@@ -1,6 +1,6 @@
 ---
 name: official-social-posts
-description: Use when drafting daily official-account social posts or replies for a brand, especially multilingual Twitter/X posts. Follow a context-first workflow: infer or confirm brand/business/social-account requirements, decide languages and length constraints, gather official-account materials when needed, confirm or propose topics, then produce complete post copy, hashtags, and matching visual guidance or assets for every requested language.
+description: "Use when drafting daily official-account social posts or replies for a brand, especially multilingual Twitter/X posts. Follow a context-first workflow: infer or confirm brand/business/social-account requirements, decide languages and length constraints, gather official-account materials when needed, confirm or propose topics, then produce complete post copy, hashtags, and matching visual guidance or assets for every requested language."
 ---
 
 # Official Social Posts
