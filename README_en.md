@@ -37,5 +37,15 @@ A multilingual social-writing skill for daily official-account content. It defau
 **Usage Scenario**:
 "Based on current AI trends, write a Japanese and English official X post with hashtags and a promotional image."
 
+### 4. DX Certified Business Application Scraper & Semantic Analyzer (dx-certification-scraper)
+**Introduction**:
+A specialized tool for scraping and analyzing DX application documents (ZIP files) on the Japanese IPA DX Portal. It combines automated data extraction with LLM semantic reasoning to filter and screen target companies matching specific sales profiles (e.g., AI API demand, SaaS software development, or construction modernization).
+**Core Features**:
+- **Two-phase Smart Pipeline**: Phase 1 utilizes Python scripts to download CSV catalogs and ZIP documents, decode Shift-JIS Japanese filenames, and dump the docx text to JSON. Phase 2 leverages LLM reasoning to perform semantic filtering and tier-classification in context.
+- **Dynamic Targeting Criteria**: Moves beyond rigid keyword searches. The agent dynamically assesses the actual progress of AI systems, SaaS projects, or industry-specific alignment based on current goals and assigns A/B/C tiers.
+- **Polished Excel Reports**: Automatically builds multi-sheet styled Excel files detailing classifications, logic, context snippets, and sales action items.
+**Usage Scenario**:
+"Analyze this DX portal page to find companies with genuine AI API integration needs: https://disclosure.dx-portal.ipa.go.jp/p/dxcp/top?page=1"
+
 ---
 *To be continued... Welcome to Star ⭐️ and Fork!*
