@@ -1,6 +1,6 @@
 [**中文**](README.md) | [**English**](README_en.md) | [**日本語**](README_ja.md)
 
-# My Antigravity Skills Collection 🚀
+# My AI Agent Skills Collection 🚀
 Here is a collection of custom local skills created and maintained by me for [Antigravity](https://github.com/GoogleDeepMind/antigravity) (or Agent terminals like Claude Code).
 By writing these custom skills, I can empower the AI assistant with exclusive capabilities in specific domains, breaking through the limits of standard interactions and achieving deeper automated workflows.
 
