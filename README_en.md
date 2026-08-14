@@ -27,15 +27,14 @@ A local skill dedicated to converting complex web pages (containing ads, sidebar
 
 ### 3. Multilingual Official Social Post Assistant (official-social-posts)
 **Introduction**:
-A multilingual social-writing skill for daily official-account content. It defaults to Twitter/X but can also support other official social channels. It first reviews the conversation, project materials, and existing account style; if the workflow has already been established, it reuses the last confirmed languages, length constraints, tone, output format, and image preferences.
+A multilingual social-writing skill for daily official-account content, defaulting to Twitter/X. All brand conventions (languages, tone, length limits, hashtag style, forbidden terms, tone-anchoring examples) live in "brand profile" files that every output must read from — no reliance on conversation memory, so a fresh session seamlessly continues the established style and confirmed preferences are never lost.
 **Core Features**:
-- **Context-first workflow**: Reviews prior context, project files, and brand assets before asking setup questions; reuses prior defaults for repeated workflows.
-- **Complete multilingual packages**: Produces post copy, hashtags, and image guidance or assets for each requested language.
-- **Topic and trend support**: Drafts from user-specified topics or proposes several timely topic options for the user to choose from.
-- **Official-account tone control**: Keeps posts natural, restrained, useful, and not overly promotional.
-- **Visual workflow**: Uses existing logos, posters, and brand assets first; for text-heavy social cards, prefers controllable HTML/CSS rendering to avoid multilingual text errors.
+- **Profile-driven**: With a profile present it drafts directly with zero repeated setup questions; without one it enters an onboarding mode (extracting existing materials or interviewing in rounds); corrections made during use can be written back into the profile.
+- **Complete multilingual packages**: A mandatory three-part template per language (ready-to-post copy + 3-5 language-specific hashtags + visual plan), each language localized independently rather than machine-translated.
+- **Example-anchored tone**: Built-in good/bad post contrasts (problem-first vs. brand-name-first) and a dedicated reply mode enforcing "add value, don't sell, no links" to avoid embarrassing promotional replies.
+- **Pre-delivery checklist**: Character counts measured by command (never eyeballed), hashtag counts verified, zero forbidden-term hits, and every factual claim sourced — all checks pass before delivery.
 **Usage Scenario**:
-"Based on current AI trends, write a Japanese and English official X post with hashtags and a promotional image."
+"Based on current AI trends, write a Japanese and English official X post with hashtags."
 
 ### 4. DX Certified Business Application Scraper & Semantic Analyzer (dx-certification-scraper)
 **Introduction**:
