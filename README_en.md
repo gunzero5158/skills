@@ -47,5 +47,16 @@ A specialized tool for scraping and analyzing DX application documents (ZIP file
 **Usage Scenario**:
 "Analyze this DX portal page to find companies with genuine AI API integration needs: https://disclosure.dx-portal.ipa.go.jp/p/dxcp/top?page=1"
 
+### 5. X (Twitter) Account Analyzer & Outreach Copywriter (x-outreach)
+**Introduction**:
+A writing skill for B2B cold outreach (partner recruiting, customer conversion): it first investigates the real identity behind an X (Twitter) account, then generates a personalized Japanese DM or public reply based on a "campaign profile" mechanism. It solves the "context lost between sessions" problem — all approved wording, offer numbers, and forbidden terms live in profile files, so any fresh session can cold-start.
+**Core Features**:
+- **Deep Identity Verification**: Cross-checks social vertical search with web sources to confirm the person's real name (including the correct kanji spelling), current title, and company — avoiding outdated titles, renamed accounts, and homophone surname mistakes.
+- **Compliance Gating**: A built-in constraint table — never offer revenue share to civil servants (side-job restrictions), give concrete numbers only to private-sector owners — plus a risk scan (controversies, scam allegations) reported honestly for the user to decide.
+- **Profile-driven Generation**: Selling-point order, pricing wording, forbidden-term list, and signature formats are all read from profile files; with no profile present it enters an onboarding mode (extracting existing materials or interviewing in rounds); corrections made during use can be written back into the profile.
+- **Two Output Modes**: DM mode produces a fully structured private message (with a concrete hook mined from recent posts and a low-friction question-form CTA); reply mode produces short, non-promotional public comments to build presence first.
+**Usage Scenario**:
+"Check out this person's account https://x.com/xxx — I'd like to DM them about a partnership."
+
 ---
 *To be continued... Welcome to Star ⭐️ and Fork!*
