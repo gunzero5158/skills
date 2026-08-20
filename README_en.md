@@ -1,6 +1,6 @@
 [**中文**](README.md) | [**English**](README_en.md) | [**日本語**](README_ja.md)
 
-# My Antigravity Skills Collection 🚀
+# My AI Agent Skills Collection 🚀
 Here is a collection of custom local skills created and maintained by me for [Antigravity](https://github.com/GoogleDeepMind/antigravity) (or Agent terminals like Claude Code).
 By writing these custom skills, I can empower the AI assistant with exclusive capabilities in specific domains, breaking through the limits of standard interactions and achieving deeper automated workflows.
 
@@ -27,15 +27,14 @@ A local skill dedicated to converting complex web pages (containing ads, sidebar
 
 ### 3. Multilingual Official Social Post Assistant (official-social-posts)
 **Introduction**:
-A multilingual social-writing skill for daily official-account content. It defaults to Twitter/X but can also support other official social channels. It first reviews the conversation, project materials, and existing account style; if the workflow has already been established, it reuses the last confirmed languages, length constraints, tone, output format, and image preferences.
+A multilingual social-writing skill for daily official-account content, defaulting to Twitter/X. All brand conventions (languages, tone, length limits, hashtag style, forbidden terms, tone-anchoring examples) live in "brand profile" files that every output must read from — no reliance on conversation memory, so a fresh session seamlessly continues the established style and confirmed preferences are never lost.
 **Core Features**:
-- **Context-first workflow**: Reviews prior context, project files, and brand assets before asking setup questions; reuses prior defaults for repeated workflows.
-- **Complete multilingual packages**: Produces post copy, hashtags, and image guidance or assets for each requested language.
-- **Topic and trend support**: Drafts from user-specified topics or proposes several timely topic options for the user to choose from.
-- **Official-account tone control**: Keeps posts natural, restrained, useful, and not overly promotional.
-- **Visual workflow**: Uses existing logos, posters, and brand assets first; for text-heavy social cards, prefers controllable HTML/CSS rendering to avoid multilingual text errors.
+- **Profile-driven**: With a profile present it drafts directly with zero repeated setup questions; without one it enters an onboarding mode (extracting existing materials or interviewing in rounds); corrections made during use can be written back into the profile.
+- **Complete multilingual packages**: A mandatory three-part template per language (ready-to-post copy + 3-5 language-specific hashtags + visual plan), each language localized independently rather than machine-translated.
+- **Example-anchored tone**: Built-in good/bad post contrasts (problem-first vs. brand-name-first) and a dedicated reply mode enforcing "add value, don't sell, no links" to avoid embarrassing promotional replies.
+- **Pre-delivery checklist**: Character counts measured by command (never eyeballed), hashtag counts verified, zero forbidden-term hits, and every factual claim sourced — all checks pass before delivery.
 **Usage Scenario**:
-"Based on current AI trends, write a Japanese and English official X post with hashtags and a promotional image."
+"Based on current AI trends, write a Japanese and English official X post with hashtags."
 
 ### 4. DX Certified Business Application Scraper & Semantic Analyzer (dx-certification-scraper)
 **Introduction**:
@@ -46,6 +45,17 @@ A specialized tool for scraping and analyzing DX application documents (ZIP file
 - **Polished Excel Reports**: Automatically builds multi-sheet styled Excel files detailing classifications, logic, context snippets, and sales action items.
 **Usage Scenario**:
 "Analyze this DX portal page to find companies with genuine AI API integration needs: https://disclosure.dx-portal.ipa.go.jp/p/dxcp/top?page=1"
+
+### 5. X (Twitter) Account Analyzer & Outreach Copywriter (x-outreach)
+**Introduction**:
+A writing skill for B2B cold outreach (partner recruiting, customer conversion): it first investigates the real identity behind an X (Twitter) account, then generates a personalized Japanese DM or public reply based on a "campaign profile" mechanism. It solves the "context lost between sessions" problem — all approved wording, offer numbers, and forbidden terms live in profile files, so any fresh session can cold-start.
+**Core Features**:
+- **Deep Identity Verification**: Cross-checks social vertical search with web sources to confirm the person's real name (including the correct kanji spelling), current title, and company — avoiding outdated titles, renamed accounts, and homophone surname mistakes.
+- **Compliance Gating**: A built-in constraint table — never offer revenue share to civil servants (side-job restrictions), give concrete numbers only to private-sector owners — plus a risk scan (controversies, scam allegations) reported honestly for the user to decide.
+- **Profile-driven Generation**: Selling-point order, pricing wording, forbidden-term list, and signature formats are all read from profile files; with no profile present it enters an onboarding mode (extracting existing materials or interviewing in rounds); corrections made during use can be written back into the profile.
+- **Two Output Modes**: DM mode produces a fully structured private message (with a concrete hook mined from recent posts and a low-friction question-form CTA); reply mode produces short, non-promotional public comments to build presence first.
+**Usage Scenario**:
+"Check out this person's account https://x.com/xxx — I'd like to DM them about a partnership."
 
 ---
 *To be continued... Welcome to Star ⭐️ and Fork!*

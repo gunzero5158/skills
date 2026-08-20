@@ -1,99 +1,75 @@
 ---
 name: official-social-posts
-description: "Use when drafting daily official-account social posts or replies for a brand, especially multilingual Twitter/X posts. Follow a context-first workflow: infer or confirm brand/business/social-account requirements, decide languages and length constraints, gather official-account materials when needed, confirm or propose topics, then produce complete post copy, hashtags, and matching visual guidance or assets for every requested language."
+description: 为品牌官方账号撰写日常社媒内容（默认 Twitter/X，也可用于其他平台）：多语言推文、回帖、hashtag 与配图方案。当用户想发官推、写官方账号内容、回复别人的推文、要多语言社媒文案、或让你基于热点提选题时使用——即使用户没说「官方账号」，只要是以品牌名义发的社媒内容就应使用本 skill。也用于新建或更新品牌档案（用户说「建个品牌档案」「换个品牌发帖」时）。
 ---
 
-# Official Social Posts
+# Official Social Posts：品牌官号社媒内容生成
 
-## Purpose
+以品牌名义发声，克制、自然、有用，不惹人烦。所有品牌口径（语种、语气、长度、hashtag 风格、禁词）都存在**品牌档案（profile）**里，产出必须吃档案，不依赖对话记忆——因此任何新会话都能直接续上以前的风格。
 
-Create official-account social posts and replies that are useful, natural, and not annoyingly promotional. The default output package is:
+## 第 0 步：确定品牌档案
 
-- post copy for each requested language
-- matching hashtags for each language
-- image/visual concept or generated/local asset when requested or useful
+1. 列出 `profiles/` 目录。用户指定了档案就用指定的；只有一份且语境相符就直接用；有多份且未指定则问一句。
+2. **没有可用档案 → 建档**，然后再干活。两条路：
+   - 用户有现成资料（官网、品牌介绍、以往发过的推文）→ 通读后按 `profiles/_template.md` 的结构抽取生成草稿。**以往的真实推文最有价值**：从中反推语气和格式，并收进档案的范例节。
+   - 没有资料 → 访谈，每轮 2~3 个问题：①品牌是什么、账号发给谁看？②要哪些语种？账号有没有字数限制（如非会员 X 账号 280 字符）？③有什么绝对不能说的（未取得的资质、夸大表述、竞品对比）？④hashtag 和配图的偏好？
+   - 草稿经用户确认后存入 `profiles/<品牌名>.md`。
+3. 读定下的档案**全文**。档案里的规则优先级高于本文件的通用规则。
 
-Use this for Twitter/X by default unless the user names another platform.
+**建档之后不再重复问设置类问题。** 需要再开口的只有三种情况：新请求与档案规则冲突、缺少本次任务必需的参数（如没给主题也没让你提选题）、需要核实时效性事实。其余一律按档案直接产出。
 
-## Context Check
+## 第 1 步：确定任务类型
 
-At the start of a new brand/workflow, first review available context before asking questions:
+- **命题发帖**：用户给了主题 → 直接起草。
+- **选题模式**：用户让你提议 → 如需时效性就先搜当前热点，然后给 3~6 个选题，每个附一行理由，标出最推荐的一个，等用户挑选后再出完整内容。
+- **回帖**：用户给了要回复的推文/截图 → 规则完全不同：先认同或延伸对方的点，实用观察为主体，品牌提及要么放在结尾轻轻带过、要么干脆不提；比独立发帖更短、更不推销。判断标准：删掉品牌视角，这条回复本身是否仍是条好评论。
 
-1. Read the current conversation for prior official-account style, business value props, target audience, language preferences, membership/length constraints, and image preferences.
-2. If memory is likely relevant, do the normal lightweight memory pass and cite it in the final answer if used.
-3. Search the project folder for brand/business materials when the task is project-bound. Prefer `rg` and existing assets such as `logo/`, `poster/`, `assets/`, `README`, press releases, pricing pages, and presentation docs.
-4. If current trends or official-account content are needed, browse. Use official/primary sources for factual claims and use browser tools when the user asks to inspect the account itself or dynamic social pages.
+## 第 2 步：起草
 
-After this check:
+- 语气以**档案里的范例推文**为锚，不凭形容词自由发挥。写之前读 `references/examples.md` 的好/坏对比，明确「克制」和「推销味」的分界线在哪。
+- 结构套路：先讲用户/市场的真实问题或实用洞察，品牌作为其中一种解法出现，不开头就报品牌名。
+- 多语言不是互译：每个语种按当地语感独立成文，保持同一意图即可。
+- 事实纪律：新闻、价格、政策、模型可用性等事实性表述，没核实过、档案里也没有的，一律不写。用了时效性信息要在交付时附来源。
+- X/Twitter 用短段落和换行保持可读性。
 
-- If the conversation shows this is an established repeating workflow, do not ask the setup questions again. Reuse the most recent confirmed defaults: brand, languages, post length, platform, tone, output package, hashtag style, image expectations, asset folder, and any known business claims. Apply the user's new topic/material to those defaults and draft directly.
-- If relevant context exists but this appears to be the first execution for that brand/workflow, summarize your understanding briefly and ask the user to confirm only if the inferred scope could be wrong.
-- If no relevant context exists, ask concise questions before drafting:
-  - Is this for a multilingual official account, and which languages?
-  - How many languages/post variants are needed?
-  - Is the account limited to short posts such as 140 characters, or can it publish longer posts?
-  - Should the topic be user-specified, or should you propose topics to choose from?
+## 第 3 步：输出（必须使用此模板）
 
-Do not over-question once the workflow is established; use the known defaults and produce drafts.
+每个语种一组，**三件套缺一不可**，格式固定如下：
 
-Only ask again in an established workflow when the new request conflicts with the prior defaults, when a required output parameter is genuinely missing, or when live/current information must be verified before making a factual claim.
+```
+**[语种名]**
 
-## Topic Workflow
+[可直接发布的推文全文]
 
-When the user gives a topic, draft from that topic directly.
+Hashtags: #tag1 #tag2 #tag3
 
-When the user asks for topics:
+配图：[视觉概念一句话 ／ 本地素材路径 ／ 「本条不建议配图」+原因]
+```
 
-1. Gather current, relevant trends if the topic should be timely.
-2. Propose 3-6 options with a one-line rationale for each.
-3. Identify the most recommended option.
-4. After the user picks one, produce the full package.
+- Hashtag 每个语种独立配 3~5 个（1 个品牌 tag + 1 个类目 tag + 1~3 个主题 tag），除非确实通用才共享一套。
+- **配图默认只给文字概念**（画面、文案、构图一句话说清）。实际渲染/生成图片只在用户明确要求时做；届时优先用项目里的 logo/poster 素材，含文字的图用 HTML/CSS 渲染保证不出错字，一个语种一张，存进项目素材目录并报告路径。
 
-When the user provides a post, screenshot, or quote to reply to:
+## 第 4 步：自查（逐条过，全过才交付）
 
-1. Identify the other post's main point.
-2. Start by acknowledging or extending the point.
-3. Mention the brand value subtly, usually near the end.
-4. Keep replies shorter and less promotional than standalone posts.
+- [ ] 每个要求的语种都有完整三件套
+- [ ] 有字数限制的账号：**实测**字数（`python3 -c "print(len('全文'))"`），不要目测；超限就删改再测
+- [ ] hashtag 每组 3~5 个，无堆砌
+- [ ] 档案禁词表零命中；无夸大、无竞品贬低、品牌名未刷屏
+- [ ] 事实性表述都有出处（档案、用户提供或已核实来源）
 
-## Drafting Rules
+## 规则回写
 
-- Match official-account tone: calm, credible, useful, and restrained.
-- Avoid hard selling, exaggerated claims, competitor dunking, spammy hashtag piles, and repetitive brand mentions.
-- Lead with the market/user problem or practical insight; introduce the brand as one possible solution.
-- For multilingual output, do not translate mechanically. Localize each language naturally while preserving the same intent.
-- For X/Twitter, prefer short paragraphs and readable line breaks.
-- If the user has a paid/long-post account, longer posts are allowed but should still be concise.
-- If a strict character limit applies, state that the draft is designed for that limit.
-- Avoid making factual claims about news, pricing, policies, or model availability unless verified or clearly based on provided/project context.
-- If using current events, cite sources in the final answer when appropriate.
+用户纠正了措辞、语气或格式 → 改完当次产出后，**主动问是否把修正回写进档案**；确认后更新 `profiles/<品牌名>.md`，有范例价值的好稿追加进档案的范例节。积累进档案，不留在对话里。
 
-## Output Package
+## 目录结构
 
-For each requested language, provide:
-
-1. **Post Copy**: ready-to-post text.
-2. **Hashtags**: 3-5 natural hashtags. Avoid more unless the user asks.
-3. **Image**: one of:
-   - a concrete visual concept/prompt
-   - a generated/local image asset
-   - a note that no image is recommended for this specific reply
-
-For multilingual posts, include the full package for every language. Do not provide only one shared hashtag list unless it genuinely fits all languages.
-
-## Visual Workflow
-
-Use existing brand assets first when available. For project-bound work:
-
-1. Look for logo, poster, palette, and prior visual assets in the project.
-2. Prefer deterministic layouts for graphics with text: HTML/CSS rendered to PNG, slides, or other controllable tools. This avoids bad typography and multilingual text errors.
-3. Use image generation for raster imagery when a photographic/illustrative asset is desired and exact text is not the main content.
-4. Keep social images simple: one headline, one short supporting line, and 2-4 value points at most.
-5. Generate one visual per language when the image contains language-specific text.
-6. Save project-bound assets inside the project, usually in an existing `poster/` or assets folder, and report the absolute path.
-
-For Twitter/X cards, 1600x900 is a good default unless the user requests another size.
-
-## Useful Reference
-
-For compact templates and package examples, read `references/output-patterns.md` when helpful.
+```
+official-social-posts/
+├── SKILL.md
+├── profiles/
+│   ├── _template.md            # 品牌档案模板
+│   └── example-bridgeapi.md    # 架空品牌示范档案
+├── references/
+│   └── examples.md             # 好/坏推文对比范例
+└── agents/openai.yaml
+```
