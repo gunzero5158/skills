@@ -57,5 +57,16 @@ A writing skill for B2B cold outreach (partner recruiting, customer conversion):
 **Usage Scenario**:
 "Check out this person's account https://x.com/xxx — I'd like to DM them about a partnership."
 
+### 6. Game Port Archive (game-port-archive)
+**Introduction**:
+Collect and update game decompilation, recompilation, PC port, and fan-remake projects from GitHub. Compare local archives with upstream commits and releases, then preserve suitable runtime packages, pinned source, specialized dependencies, Chinese instructions, and update links.
+**Core Features**:
+- **Incremental comparison**: Track source and runtime updates separately; prefer Windows x64, retain complete x86 packages when necessary, and keep alternatives with distinct functionality.
+- **Compressed preservation**: Include pinned project-specific submodules, tools, patches, and licenses; document general development prerequisites instead of downloading them.
+- **Traceable verification**: Includes ZIP integrity, PE architecture, and per-file SHA256 round-trip packing tools, alongside HTML, CSV, and provenance records.
+- **Clear limits**: Distinguish portable games, build/import wizards, other platforms, and research-only source. Does not obtain commercial ROMs or present file checks as gameplay tests.
+**Usage Scenario**:
+"Compare these GitHub game ports with my local collection and archive new or updated projects with suitable runtime packages, complete source, Chinese instructions, and update links."
+
 ---
 *To be continued... Welcome to Star ⭐️ and Fork!*
