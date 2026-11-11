@@ -58,8 +58,12 @@ python scripts/archive_tools.py pack SOURCE_DIR OUTPUT.zip --prefix source
 ## Google Drive维护
 
 - 用户选择云端为主库后，先读取本机连接记录中的remote、root_folder_id与配置位置；授权令牌只在本机专用目录，绝不上传合集或提交GitHub。根目录限定是操作范围，不等同OAuth权限范围。
-- 本会话连接线索：工作区work/drive-tools/connection.json；工具及授权配置在用户LOCALAPPDATA/GamePortArchive。未找到配置时重新确认连接，不能猜测账户或云端目录。
+- 本会话连接线索：用户LOCALAPPDATA/GamePortArchive 中的连接记录；维护脚本在 D:/projects/game-archive-maintenance。未找到配置时重新确认连接，不能猜测账户或云端目录。
 - 首次迁移按相对路径比对全部文件数量、大小和可用哈希，排查Drive同名重复；浏览器上传完成提示不足以证明完整。未核验完成不删除本地原件。
 - 后续读取云端当前manifest和说明，只暂存新增或变化的运行包，校验后上传，再确认云端大小与哈希，最后处理被替代旧包并更新索引。禁止以不完整本地暂存目录对整个云端运行删除型sync。
 - 全集不必回下载；旧包使用既有校验记录与远端哈希。清理旧包使用可恢复回收站，用户自有ROM、存档和额外文件不动。上传成功与校验完成分别记录。
 - 云端接入以实际列目录及小型审计记录上传读回为验证；未验证不能报告读写可用。共享OAuth客户端可能停用，失效时改用用户专用客户端，勿称其永久有效。
+
+## 百度网盘与跨云迁移
+
+使用百度或 OpenList 时先读 [百度接入与迁移](references/baidu-openlist.md)，区分授权、传输、读回校验及目录验收；用户选定百度主库后以当前连接记录为准。
