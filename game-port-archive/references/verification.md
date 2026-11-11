@@ -2,14 +2,14 @@
 
 ## 本地只读检查
 
-新增验收器版本为 1.0.0；它使用 Python 标准库，不联网、不下载、不执行游戏、不改写合集，也不代替修复流程。
+新增验收器版本为 1.1.0；它使用 Python 标准库，不联网、不下载、不执行游戏、不改写合集，也不代替修复流程。
 
 ```text
 python scripts/verify_archive.py "D:/PC游戏移植项目合集"
 python scripts/verify_archive.py "D:/PC游戏移植项目合集" --cloud-listing cloud-files.json
 ```
 
-适用结构：顶层游戏目录中的项目记录.json，以及 `_归档记录/当前管理记录/{manifest,校验结果}.json`、根目录下载文件SHA256.csv。其他结构先做显式适配，不猜测字段或忽略不支持的格式。JSON 输出 ok=false 或非零退出码必须处理，不可当作已验收。
+适用结构：顶层游戏目录中的项目记录.json，以及 `_归档记录/当前管理记录/{manifest,校验结果}.json`、同一管理目录中的下载文件SHA256.csv（兼容旧根目录位置，但两处同时存在会报错）。其他结构先做显式适配，不猜测字段或忽略不支持的格式。JSON 输出 ok=false 或非零退出码必须处理，不可当作已验收。
 
 脚本检查：项目与manifest仓库集合、提交/运行版本/downloads一致；当前归档路径存在、大小和SHA256与记录一致；中央清单与CSV路径集合一致且无重复；源码提交及codeload来源URL不冲突。云端列表来自实际 `rclone lsjson --recursive --files-only --hash`，脚本检查重复路径及中央归档在云端的大小/SHA256。列表必须新鲜，不能以旧快照证明当前云端状态。
 

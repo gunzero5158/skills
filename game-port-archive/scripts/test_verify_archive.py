@@ -36,6 +36,14 @@ class AuditTests(unittest.TestCase):
         (self.root / 'Game/run.zip').write_bytes(b'456')
         self.assertFalse(audit(self.root)['ok'])
 
+    def test_consolidated_csv_location(self):
+        (self.root / '下载文件SHA256.csv').rename(self.management / '下载文件SHA256.csv')
+        self.assertTrue(audit(self.root)['ok'])
+
+    def test_duplicate_current_csv_rejected(self):
+        (self.management / '下载文件SHA256.csv').write_bytes((self.root / '下载文件SHA256.csv').read_bytes())
+        self.assertIn('duplicate current SHA256 CSV locations', audit(self.root)['errors'])
+
     def test_stale_central(self):
         p = self.management / '校验结果.json'
         j = json.loads(p.read_text()); j['archives'][0]['sha256'] = '0'*64

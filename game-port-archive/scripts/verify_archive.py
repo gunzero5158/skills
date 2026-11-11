@@ -5,7 +5,7 @@ import hashlib
 import json
 from pathlib import Path
 
-VERSION = '1.0.0'
+VERSION = '1.1.0'
 
 
 def audit(root, cloud=None):
@@ -73,7 +73,13 @@ def audit(root, cloud=None):
                     fail('source URL commit conflict: ' + repo)
     if sorted(project_repos) != sorted(repos):
         fail('manifest/project repository sets differ')
-    with (root / '下载文件SHA256.csv').open(encoding='utf-8-sig', newline='') as f:
+    csv_path = management / '下载文件SHA256.csv'
+    legacy_csv = root / '下载文件SHA256.csv'
+    if csv_path.exists() and legacy_csv.exists():
+        fail('duplicate current SHA256 CSV locations')
+    if not csv_path.exists():
+        csv_path = legacy_csv
+    with csv_path.open(encoding='utf-8-sig', newline='') as f:
         csv_keys = [check(e) for e in csv.DictReader(f)]
     if sorted(csv_keys) != sorted(central_keys):
         fail('CSV/central path sets differ')
