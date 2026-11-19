@@ -76,4 +76,4 @@ python scripts/archive_tools.py pack SOURCE_DIR OUTPUT.zip --prefix source
 
 ## 本地与百度网盘同步
 
-使用百度或 OpenList 时先读 [本机百度接入与同步](references/baidu-openlist.md)，区分授权、传输、读回校验及目录验收；用户选定百度主库后以当前连接记录为准。
+本合集批量同步使用网盘 MCP、CLI 或本机 API，不使用 computer-use；多账号必须核实项目绑定，不能沿用日常客户端登录态。使用百度或 OpenList 时先读 [本机百度接入与同步](references/baidu-openlist.md)，区分授权、传输、读回校验及目录验收；用户选定百度主库后以当前连接记录为准。
