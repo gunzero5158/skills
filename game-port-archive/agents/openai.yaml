@@ -1,6 +1,6 @@
 interface:
   display_name: "游戏移植收藏归档"
-  short_description: "比较游戏移植项目更新，选择适用Windows版本并保全源码与专用依赖压缩归档"
+  short_description: "比较游戏移植项目更新，选择适用Windows及Android版本，保全源码与专用依赖，标记待观察项目并同步网盘"
   default_prompt: "使用 $game-port-archive 核查这些项目是否已收藏及是否更新，按既定规格整理到本地合集。"
 
 policy:
